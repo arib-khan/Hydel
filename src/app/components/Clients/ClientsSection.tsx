@@ -9,7 +9,7 @@ const clients = [
   { name: "IndianOil", logo: "/home-images/IndianOil.png" },
   { name: "BPCL", logo: "/home-images/BPCL.png" },
   { name: "HPCL", logo: "/home-images/hpcl.png" },
-  { name: "Jash India", logo: "/home-images/jash.png" },
+  { name: "Jash India", logo: "/home-images/Jash.png" },
   { name: "LanXess", logo: "/home-images/LanXess.png" },
   { name: "Unichem", logo: "/home-images/Unichem.png" },
   { name: "SRF", logo: "/home-images/SRF.png" },
