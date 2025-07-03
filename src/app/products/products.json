@@ -1,0 +1,101 @@
+[
+    {
+      "id": 1,
+      "name": "Graphite gasket",
+      "description": "High-temperature resistant gasket made from flexible graphite, ideal for industrial applications.",
+      "price": 45.99,
+      "image": "/products-images/Graphite-Gasket-min.png",
+      "material": "Pure Graphite",
+      "customizable": true,
+      "colors": ["Black", "Silver"],
+      "sizes": ["1/8\"", "1/4\"", "1/2\"", "Custom"]
+    },
+    {
+      "id": 2,
+      "name": "Asbestos gasket",
+      "description": "Heat-resistant gasket made from asbestos fibers, suitable for high-pressure applications (Note: Restricted in some regions).",
+      "price": 35.50,
+      "image": "/products-images/Asbestos-Gasket-min.png",
+      "material": "Asbestos Fiber",
+      "customizable": true,
+      "colors": ["White","Gray"],
+      "sizes": ["Standard", "Custom"]
+    },
+    {
+      "id": 3,
+      "name": "Non Asbestos gasket",
+      "description": "Environmentally friendly gasket made from synthetic fibers, a safe alternative to asbestos.",
+      "price": 39.99,
+      "image": "/products-images/NonAsbestos-Gasket-min.png",
+      "material": "Aramid Fiber/Cellulose",
+      "customizable": true,
+      "colors": ["White", "Gray", "Green"],
+      "sizes": ["1/8\"", "1/4\"", "1/2\"", "Custom"]
+    },
+    {
+      "id": 4,
+      "name": "Ceramic gasket",
+      "description": "Extremely durable and heat-resistant gasket, ideal for extreme temperature environments.",
+      "price": 59.99,
+      "image": "/products-images/Ceramic-Gasket-min.png",
+      "material": "Ceramic Fiber",
+      "customizable": true,
+      "colors": ["White", "Beige"],
+      "sizes": ["Standard", "Custom"]
+    },
+    {
+      "id": 5,
+      "name": "Rubber gasket",
+      "description": "Flexible and waterproof gasket made from high-quality rubber, used for sealing applications.",
+      "price": 19.99,
+      "image": "/products-images/Rubber-Gasket-min.png",
+      "material": "Nitrile Rubber (NBR)",
+      "customizable": true,
+      "colors": ["Black", "Red", "Blue"],
+      "sizes": ["1/16\"", "1/8\"", "1/4\"", "Custom"]
+    },
+    {
+      "id": 6,
+      "name": "Spiral wound gasket",
+      "description": "High-performance gasket with a spiral-wound metal and filler design, used in high-pressure systems.",
+      "price": 65.99,
+      "image": "/products-images/SpiralWound-Gasket-min.png",
+      "material": "Stainless Steel + Graphite",
+      "customizable": true,
+      "colors": ["Silver", "Green"],
+      "sizes": ["Standard", "Custom"]
+    },
+    {
+      "id": 7,
+      "name": "Teflon gasket",
+      "description": "Non-stick and chemical-resistant gasket, ideal for food and pharmaceutical industries.",
+      "price": 52.99,
+      "image": "/products-images/Teflon-Gasket-min.png",
+      "material": "Teflon (PTFE)",
+      "customizable": true,
+      "colors": ["White", "Translucent"],
+      "sizes": ["Standard", "Custom"]
+    },
+    {
+      "id": 8,
+      "name": "Rappit bandages",
+      "description": "High-strength adhesive bandages used for sealing and insulation in industrial applications.",
+      "price": 12.99,
+      "image": "/products-images/Rappit-Bandages-min.png",
+      "material": "Rubber-Based Adhesive",
+      "customizable": false,
+      "colors": ["White", "Gray"],
+      "sizes": ["2\"x 12'", "3\"x 12'", "4\"x 12'", "4\"x 16'", "4\"x 30'"]
+    },
+    {
+      "id": 9,
+      "name": "Oil seal ring",
+      "description": "Durable sealing ring designed to prevent oil leakage in engines and machinery.",
+      "price": 22.99,
+      "image": "/home-images/Oil-seal-ring.png",
+      "material": "Nitrile Rubber (NBR) / Viton",
+      "customizable": true,
+      "colors": ["Black", "Grey"],
+      "sizes": ["Standard Sizes", "Custom"]
+    }
+  ]

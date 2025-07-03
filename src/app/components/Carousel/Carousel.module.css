@@ -1,0 +1,165 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px); /* Subtract navbar height */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-top: 70px; /* Push down by navbar height */
+    /* background-color: rgba(0, 0, 0, 0.9); */
+}
+
+.carouselSlides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carouselSlide {
+    min-width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.slideMedia {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure no gaps around the media */
+    display: block;
+}
+
+/* .slideContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    display: none;
+} */
+ .slideContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    display: block; /* Change from 'none' to 'block' to always show */
+    z-index: 5;
+    border-radius: 8px;
+}
+
+.carouselControl {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.carouselControl.prev {
+    left: 20px;
+}
+
+.carouselControl.next {
+    right: 20px;
+}
+
+.carouselControl:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carouselIndicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carouselIndicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s;
+    display: none;
+}
+
+.carouselIndicator.active {
+    background: white;
+}
+
+
+
+
+/* Add these new styles */
+.carouselOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.carouselTextContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 90%;
+    /* max-width: 800px; */
+    z-index: 3; /* Above the overlay */
+    padding: 20px;
+}
+
+.carouselTextP {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.carouselTextH {
+    font-size: 2.5rem;
+}
+
+/* Remove the .slideContent styles completely */
+
+
+@media (max-width: 768px) {
+    .carouselContainer {
+        height: 70vh;
+    }
+    .carouselTextP {
+    font-size: 1rem; 
+    }
+    .carouselTextH {
+    font-size: 1.5rem;
+    }
+}

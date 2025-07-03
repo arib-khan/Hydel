@@ -1,0 +1,64 @@
+/* components/SimilarProductButton.module.css */
+.container {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.container.right {
+  text-align: right;
+}
+
+.container.left {
+  text-align: left;
+}
+
+.container.center {
+  text-align: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  white-space: nowrap;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .text {
+    white-space: normal;
+  }
+}
