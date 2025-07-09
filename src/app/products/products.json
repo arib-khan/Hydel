@@ -92,7 +92,7 @@
       "name": "Oil seal ring",
       "description": "Durable sealing ring designed to prevent oil leakage in engines and machinery.",
       "price": 22.99,
-      "image": "/home-images/Oil-seal-ring.png",
+      "image": "/home-images/oil-seal-ring.png",
       "material": "Nitrile Rubber (NBR) / Viton",
       "customizable": true,
       "colors": ["Black", "Grey"],
