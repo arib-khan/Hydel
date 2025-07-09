@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li className={styles.contactItem}>
                 <FaPhone className={styles.contactIcon} />
-                <a href="tel:+918962463838" className={styles.contactLink}>+91-9827059392</a>
+                <a href="tel:+919827059392" className={styles.contactLink}>+91-9827059392</a>
               </li>
               <li className={styles.contactItem}>
                 <FaEnvelope className={styles.contactIcon} />
