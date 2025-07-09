@@ -8,15 +8,15 @@ export const metadata: Metadata = {
   title: 'Contact Us | Hydel Marketing & Services',
   description: 'Get in touch with Hydel Marketing & Services for industrial gaskets and sealing solutions',
   alternates: {
-    canonical: 'https://www.hydel.in/contactus',
+    canonical: 'https://www.hydel.co.in/contactus',
   },
   openGraph: {
     title: 'Contact Us | Hydel Marketing & Services',
     description: 'Reach out for premium industrial sealing solutions and support',
-    url: 'https://www.hydel.in/contactus',
+    url: 'https://www.hydel.co.in/contactus',
     images: [
       {
-        url: 'https://www.hydel.in/hydel.png',
+        url: 'https://www.hydel.co.in/hydel.png',
         width: 1200,
         height: 630,
         alt: 'Hydel Marketing & Services Logo',
@@ -30,8 +30,8 @@ const structuredData = {
   "@type": "LocalBusiness",
   "name": "Hydel Marketing & Services",
   "description": "Provider of premium industrial gaskets and sealing solutions",
-  "image": "https://www.hydel.in/Hydel_Logo.png",
-  "url": "https://www.hydel.in",
+  "image": "https://www.hydel.co.in/Hydel_Logo.png",
+  "url": "https://www.hydel.co.in",
   "telephone": "+91-1234567890",
   "address": {
     "@type": "PostalAddress",
