@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hydel Marketing & Services',
     description: 'Premium industrial sealing solutions for demanding applications',
-    url: 'https://hydel.in',
+    url: 'https://hydel.co.in',
     siteName: 'Hydel',
     images: [
       {
-        url: 'https://hydel.in/hydel.png',
+        url: 'https://hydel.co.in/hydel.png',
         width: 1200,
         height: 630,
       }
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
     }
   },
   icons: {
-    icon: 'https://hydel.in/hydel.png',
-    shortcut: 'https://hydel.in/hydel.png',
-    apple: 'https://hydel.in/hydel.png',
+    icon: 'https://hydel.co.in/hydel.png',
+    shortcut: 'https://hydel.co.in/hydel.png',
+    apple: 'https://hydel.co.in/hydel.png',
   },
-  metadataBase: new URL('https://hydel.in'),
+  metadataBase: new URL('https://hydel.co.in'),
 }
 
 export default function RootLayout({
