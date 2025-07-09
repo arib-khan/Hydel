@@ -53,10 +53,11 @@ export default function Home() {
     "url": "https://www.hydel.co.in",
     "logo": "https://www.hydel.co.in/hydel.png",
     "foundingDate": "2008",
-    "sameAs": [
-      "https://www.facebook.com/hydelmarketing",
-      "https://www.linkedin.com/company/hydel-marketing"
-    ]
+    "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9827059392",
+    "contactType": "Customer Service"
+  }
   };
 
   return (
