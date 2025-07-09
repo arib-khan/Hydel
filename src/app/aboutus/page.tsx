@@ -9,15 +9,15 @@ export const metadata = {
   title: 'Why Choose Hydel Marketing & Services | Industrial Gaskets & Seals',
   description: 'Discover why Hydel Marketing & Services is the trusted provider of premium industrial gaskets and sealing solutions.',
   alternates: {
-    canonical: 'https://www.hydel.in/aboutus',
+    canonical: 'https://www.hydel.co.in/aboutus',
   },
   openGraph: {
     title: 'Why Choose Hydel Marketing & Services',
     description: 'Trusted supplier of industrial sealing solutions with quality, expertise, and customer support.',
-    url: 'https://www.hydel.in/aboutus',
+    url: 'https://www.hydel.co.in/aboutus',
     images: [
       {
-        url: 'https://www.hydel.in/hydel.png',
+        url: 'https://www.hydel.co.in/hydel.png',
         width: 1200,
         height: 630,
         alt: 'Hydel Why Choose Us',
@@ -37,7 +37,7 @@ const structuredData = {
   "@type": "WebPage",
   "name": "Why Choose Hydel Marketing & Services",
   "description": "Trusted supplier of industrial gaskets and sealing solutions.",
-  "url": "https://www.hydel.in/aboutus"
+  "url": "https://www.hydel.co.in/aboutus"
 };
   
 export default function WhyChooseUsPage() {
