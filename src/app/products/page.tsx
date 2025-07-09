@@ -31,15 +31,15 @@ export const metadata = {
   title: 'Our Products | Industrial Gaskets & Seals',
   description: 'Explore our range of premium industrial gaskets including asbestos, rubber, graphite, and specialized sealing solutions.',
   alternates: {
-    canonical: 'https://www.hydel.in/products',
+    canonical: 'https://www.hydel.co.in/products',
   },
   openGraph: {
     title: 'Industrial Gaskets & Seals | Hydel Marketing & Services',
     description: 'Premium quality sealing solutions for industrial applications',
-    url: 'https://www.hydel.in/products',
+    url: 'https://www.hydel.co.in/products',
     images: [
       {
-        url: 'https://www.hydel.in/hydel.png',
+        url: 'https://www.hydel.co.in/hydel.png',
         width: 1200,
         height: 630,
       },
