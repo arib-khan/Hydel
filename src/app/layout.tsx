@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Head from 'next/head';
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from './components'
@@ -55,6 +56,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="google-site-verification" content="QkZhPeF_NTIMU5gNH-zcJdcbrFdPg5cyUKr92Iokh6s" />
+      </Head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-grow">
