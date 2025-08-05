@@ -1,11 +1,10 @@
-import type { Metadata } from 'next'
-import Head from 'next/head';
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { Navbar } from './components'
-import Footer from './components/Footer/Footer' // Import the Footer component
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Navbar } from './components';
+import Footer from './components/Footer/Footer';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -47,18 +46,18 @@ export const metadata: Metadata = {
     apple: 'https://hydel.co.in/hydel.png',
   },
   metadataBase: new URL('https://hydel.co.in'),
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta name="google-site-verification" content="QkZhPeF_NTIMU5gNH-zcJdcbrFdPg5cyUKr92Iokh6s" />
-      </Head>
+      </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-grow">
@@ -67,5 +66,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }
