@@ -1,4 +1,6 @@
+// app/sitemap.ts
 import { MetadataRoute } from 'next'
+import products from '../app/products/products.json'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastMod = new Date().toISOString();
@@ -30,6 +32,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Generate product URLs dynamically
+  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `https://www.hydel.in/products/${product.name.toLowerCase().replace(/\s+/g, '-')}`,
+    lastModified: lastMod,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
 
-  return [...staticRoutes];
+  return [...staticRoutes, ...productRoutes];
 }
