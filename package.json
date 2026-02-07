@@ -14,7 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/nodemailer": "^6.4.17",
     "emailjs-com": "^3.2.0",
-    "next": "15.3.4",
+    "next": "15.3.8",
     "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
