@@ -1,0 +1,420 @@
+[
+  {
+    "id": 1,
+    "name": "Graphite gasket",
+    "description": "High-temperature resistant gasket made from flexible graphite, ideal for industrial applications.",
+    "fullDescription": "Our premium graphite gaskets are manufactured from high-purity expanded graphite, offering exceptional thermal stability and chemical resistance. These gaskets excel in extreme temperature environments and provide reliable sealing performance across a wide range of industrial applications including power generation, petrochemical processing, and high-temperature piping systems.",
+    "price": 45.99,
+    "image": "/products-images/Graphite-Gasket-min.png",
+    "material": "Pure Graphite",
+    "customizable": true,
+    "colors": [
+      "Black",
+      "Silver"
+    ],
+    "sizes": [
+      "1/8\"",
+      "1/4\"",
+      "1/2\"",
+      "Custom"
+    ],
+    "temperatureRange": "-200°C to 450°C",
+    "pressureRating": "Up to 200 bar",
+    "applications": [
+      "Power Plants",
+      "Refineries",
+      "Chemical Processing",
+      "Steam Systems",
+      "Heat Exchangers"
+    ],
+    "features": [
+      "Excellent thermal conductivity",
+      "Superior chemical resistance",
+      "Self-lubricating properties",
+      "Low creep relaxation",
+      "Resistant to thermal cycling",
+      "No hardening at high temperatures"
+    ],
+    "standards": [
+      "ASTM F3125",
+      "API 617",
+      "DIN 28091"
+    ],
+    "technical": {
+      "thickness": "0.8mm - 6.0mm",
+      "density": "1.0 - 1.8 g/cm³",
+      "compressibility": "≤ 50%",
+      "recovery": "≥ 20%"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Asbestos gasket",
+    "description": "Heat-resistant gasket made from asbestos fibers, suitable for high-pressure applications (Note: Restricted in some regions).",
+    "fullDescription": "Traditional asbestos gaskets manufactured from compressed asbestos fiber with rubber binders. These gaskets provide excellent sealing properties for high-pressure and high-temperature applications. Please note: Use is restricted in many regions due to health regulations. Available only where legally permitted.",
+    "price": 35.50,
+    "image": "/products-images/Asbestos-Gasket-min.png",
+    "material": "Asbestos Fiber",
+    "customizable": true,
+    "colors": [
+      "White",
+      "Gray"
+    ],
+    "sizes": [
+      "Standard",
+      "Custom"
+    ],
+    "temperatureRange": "-100°C to 500°C",
+    "pressureRating": "Up to 150 bar",
+    "applications": [
+      "Legacy Systems",
+      "High-Temperature Flanges",
+      "Industrial Furnaces",
+      "Boiler Applications"
+    ],
+    "features": [
+      "Excellent heat resistance",
+      "High compressibility",
+      "Good recovery properties",
+      "Cost-effective solution",
+      "Proven track record"
+    ],
+    "standards": [
+      "BS 7531",
+      "ASTM F104"
+    ],
+    "technical": {
+      "thickness": "1.0mm - 5.0mm",
+      "density": "1.5 - 2.0 g/cm³",
+      "tensile strength": "≥ 10 MPa"
+    },
+    "compliance": "Use restricted in many countries - check local regulations"
+  },
+  {
+    "id": 3,
+    "name": "Non Asbestos gasket",
+    "description": "Environmentally friendly gasket made from synthetic fibers, a safe alternative to asbestos.",
+    "fullDescription": "Our non-asbestos gaskets are engineered using advanced aramid fibers and cellulose materials bonded with NBR rubber. These eco-friendly gaskets offer superior performance without the health risks associated with asbestos, making them ideal for modern industrial applications requiring both safety and reliability.",
+    "price": 39.99,
+    "image": "/products-images/NonAsbestos-Gasket-min.png",
+    "material": "Aramid Fiber/Cellulose",
+    "customizable": true,
+    "colors": [
+      "White",
+      "Gray",
+      "Green"
+    ],
+    "sizes": [
+      "1/8\"",
+      "1/4\"",
+      "1/2\"",
+      "Custom"
+    ],
+    "temperatureRange": "-40°C to 400°C",
+    "pressureRating": "Up to 100 bar",
+    "applications": [
+      "Water Systems",
+      "Oil & Gas",
+      "Automotive",
+      "HVAC",
+      "General Industrial"
+    ],
+    "features": [
+      "Zero asbestos content",
+      "Environmentally safe",
+      "Excellent compressibility",
+      "Good chemical resistance",
+      "Oil and fuel resistant",
+      "Low emission properties"
+    ],
+    "standards": [
+      "ASTM F104",
+      "DIN 2690",
+      "EN 13555"
+    ],
+    "technical": {
+      "thickness": "0.5mm - 5.0mm",
+      "density": "1.4 - 1.9 g/cm³",
+      "compressibility": "15-30%",
+      "recovery": "≥ 40%"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Ceramic gasket",
+    "description": "Extremely durable and heat-resistant gasket, ideal for extreme temperature environments.",
+    "fullDescription": "High-performance ceramic fiber gaskets designed for the most demanding thermal applications. Manufactured from premium alumina-silica ceramic fibers, these gaskets maintain their integrity and sealing properties even under extreme thermal stress, making them perfect for furnaces, kilns, and exhaust systems.",
+    "price": 59.99,
+    "image": "/products-images/Ceramic-Gasket-min.png",
+    "material": "Ceramic Fiber",
+    "customizable": true,
+    "colors": [
+      "White",
+      "Beige"
+    ],
+    "sizes": [
+      "Standard",
+      "Custom"
+    ],
+    "temperatureRange": "-50°C to 1260°C",
+    "pressureRating": "Up to 50 bar",
+    "applications": [
+      "Industrial Furnaces",
+      "Kilns",
+      "Exhaust Systems",
+      "High-Temp Ovens",
+      "Thermal Insulation"
+    ],
+    "features": [
+      "Ultra-high temperature resistance",
+      "Excellent thermal insulation",
+      "Low thermal conductivity",
+      "Chemical stability",
+      "Resistant to thermal shock",
+      "Non-combustible"
+    ],
+    "standards": [
+      "ASTM C1104",
+      "ISO 10635"
+    ],
+    "technical": {
+      "thickness": "3.0mm - 25.0mm",
+      "density": "96-256 kg/m³",
+      "thermalConductivity": "0.06-0.12 W/mK"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Rubber gasket",
+    "description": "Flexible and waterproof gasket made from high-quality rubber, used for sealing applications.",
+    "fullDescription": "Premium nitrile rubber (NBR) gaskets offering exceptional flexibility and sealing performance. These versatile gaskets are perfect for water, oil, and fuel applications across various industries. The superior elasticity ensures consistent sealing even under vibration and thermal cycling.",
+    "price": 19.99,
+    "image": "/products-images/Rubber-Gasket-min.png",
+    "material": "Nitrile Rubber (NBR)",
+    "customizable": true,
+    "colors": [
+      "Black",
+      "Red",
+      "Blue"
+    ],
+    "sizes": [
+      "1/16\"",
+      "1/8\"",
+      "1/4\"",
+      "Custom"
+    ],
+    "temperatureRange": "-40°C to 120°C",
+    "pressureRating": "Up to 80 bar",
+    "applications": [
+      "Automotive",
+      "Plumbing",
+      "HVAC",
+      "Food Processing",
+      "Marine Applications"
+    ],
+    "features": [
+      "Excellent flexibility",
+      "Oil and fuel resistant",
+      "Water and weatherproof",
+      "Good mechanical strength",
+      "Cost-effective solution",
+      "Easy installation"
+    ],
+    "standards": [
+      "ASTM D2000",
+      "SAE J200",
+      "ISO 1629"
+    ],
+    "technical": {
+      "thickness": "1.0mm - 6.0mm",
+      "hardness": "50-70 Shore A",
+      "tensileStrength": "≥ 7 MPa",
+      "elongation": "≥ 300%"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Spiral wound gasket",
+    "description": "High-performance gasket with a spiral-wound metal and filler design, used in high-pressure systems.",
+    "fullDescription": "Precision-engineered spiral wound gaskets featuring alternating layers of stainless steel and flexible graphite filler. This unique construction provides exceptional resilience and sealing capability for critical high-pressure and high-temperature applications in petrochemical, power generation, and process industries.",
+    "price": 65.99,
+    "image": "/products-images/SpiralWound-Gasket-min.png",
+    "material": "Stainless Steel + Graphite",
+    "customizable": true,
+    "colors": [
+      "Silver",
+      "Green"
+    ],
+    "sizes": [
+      "Standard",
+      "Custom"
+    ],
+    "temperatureRange": "-200°C to 850°C",
+    "pressureRating": "Up to 420 bar",
+    "applications": [
+      "Refineries",
+      "Chemical Plants",
+      "Power Generation",
+      "Offshore Platforms",
+      "Critical Piping"
+    ],
+    "features": [
+      "Superior resilience",
+      "Excellent blow-out resistance",
+      "Multi-layer construction",
+      "Handles thermal cycling",
+      "Resistant to creep relaxation",
+      "Self-energizing design"
+    ],
+    "standards": [
+      "ASME B16.20",
+      "API 6A",
+      "EN 1514-2"
+    ],
+    "technical": {
+      "windingType": "V-type, Inner ring, Outer ring",
+      "fillerMaterial": "Flexible Graphite",
+      "metalWinding": "304/316 Stainless Steel",
+      "innerRing": "Carbon Steel/Stainless Steel"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Teflon gasket",
+    "description": "Non-stick and chemical-resistant gasket, ideal for food and pharmaceutical industries.",
+    "fullDescription": "FDA-compliant PTFE gaskets offering unmatched chemical resistance and non-stick properties. These gaskets are the preferred choice for pharmaceutical, food processing, and chemical applications where purity and contamination prevention are critical. Virgin PTFE material ensures no leaching or contamination.",
+    "price": 52.99,
+    "image": "/products-images/Teflon-Gasket-min.png",
+    "material": "Teflon (PTFE)",
+    "customizable": true,
+    "colors": [
+      "White",
+      "Translucent"
+    ],
+    "sizes": [
+      "Standard",
+      "Custom"
+    ],
+    "temperatureRange": "-200°C to 260°C",
+    "pressureRating": "Up to 140 bar",
+    "applications": [
+      "Pharmaceutical",
+      "Food Processing",
+      "Chemical Industry",
+      "Semiconductor",
+      "Medical Devices"
+    ],
+    "features": [
+      "Virtually universal chemical resistance",
+      "FDA compliant",
+      "Non-stick surface",
+      "Low friction coefficient",
+      "Non-toxic and inert",
+      "Excellent electrical insulation"
+    ],
+    "standards": [
+      "ASTM D1710",
+      "FDA 21 CFR 177.1550",
+      "USP Class VI"
+    ],
+    "technical": {
+      "thickness": "0.5mm - 6.0mm",
+      "density": "2.1 - 2.3 g/cm³",
+      "tensileStrength": "≥ 14 MPa",
+      "elongation": "≥ 250%"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Rappit bandages",
+    "description": "High-strength adhesive bandages used for sealing and insulation in industrial applications.",
+    "fullDescription": "Industrial-grade self-vulcanizing rubber tape designed for emergency repairs, electrical insulation, and waterproofing. The unique self-fusing formula creates a permanent, seamless bond that withstands extreme conditions, making it essential for maintenance and repair operations.",
+    "price": 12.99,
+    "image": "/products-images/Rappit-Bandages-min.png",
+    "material": "Rubber-Based Adhesive",
+    "customizable": false,
+    "colors": [
+      "White",
+      "Gray"
+    ],
+    "sizes": [
+      "2\"x 12'",
+      "3\"x 12'",
+      "4\"x 12'",
+      "4\"x 16'",
+      "4\"x 30'"
+    ],
+    "temperatureRange": "-65°C to 260°C",
+    "pressureRating": "Emergency seal up to 50 bar",
+    "applications": [
+      "Emergency Repairs",
+      "Electrical Insulation",
+      "Pipe Wrapping",
+      "Cable Protection",
+      "Waterproofing"
+    ],
+    "features": [
+      "Self-vulcanizing formula",
+      "Creates permanent bond",
+      "Water and weatherproof",
+      "Electrical insulation",
+      "Chemical resistant",
+      "Easy application"
+    ],
+    "standards": [
+      "UL 510",
+      "ASTM D4388"
+    ],
+    "technical": {
+      "thickness": "0.5mm - 0.8mm",
+      "dielectricStrength": "≥ 400 V/mil",
+      "tensileStrength": "≥ 500 psi"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Oil seal ring",
+    "description": "Durable sealing ring designed to prevent oil leakage in engines and machinery.",
+    "fullDescription": "Precision-molded oil seal rings featuring a reinforced metal case and high-performance elastomer lip. Engineered to provide reliable shaft sealing in rotating applications, preventing lubricant leakage while excluding contaminants. Perfect for automotive, industrial machinery, and hydraulic systems.",
+    "price": 22.99,
+    "image": "/home-images/oil-seal-ring.png",
+    "material": "Nitrile Rubber (NBR) / Viton",
+    "customizable": true,
+    "colors": [
+      "Black",
+      "Grey"
+    ],
+    "sizes": [
+      "Standard Sizes",
+      "Custom"
+    ],
+    "temperatureRange": "-40°C to 200°C (Viton: up to 250°C)",
+    "pressureRating": "Low pressure rotary seals",
+    "applications": [
+      "Automotive Engines",
+      "Gearboxes",
+      "Hydraulic Systems",
+      "Pumps",
+      "Industrial Machinery"
+    ],
+    "features": [
+      "Precision lip design",
+      "Metal reinforcement",
+      "Low friction operation",
+      "Excellent wear resistance",
+      "Prevents contamination",
+      "Long service life"
+    ],
+    "standards": [
+      "ISO 6194",
+      "DIN 3760",
+      "JIS B 2402"
+    ],
+    "technical": {
+      "lipType": "Single/Double lip",
+      "springType": "Garter spring loaded",
+      "caseType": "Metal outer case",
+      "surfaceSpeed": "Up to 15 m/s"
+    }
+  }
+]

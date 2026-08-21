@@ -1,0 +1,29 @@
+/* @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+/* Add these optimizations */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

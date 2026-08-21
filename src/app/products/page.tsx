@@ -1,0 +1,85 @@
+// app/products/page.tsx
+
+import { Navbar } from '../components';
+import styles from './Products.module.css';
+import Script from 'next/script';
+import ProductCard from './ProductCard';
+import SimilarProductButton from './SimilarProductButton';
+import { listPublicProducts } from '@/lib/repositories/productRepository';
+
+// Products now come from Firestore instead of the local products.json file.
+// Revalidate periodically so admin edits show up without a full redeploy.
+export const revalidate = 60;
+
+export const metadata = {
+  title: 'Our Products | Industrial Gaskets & Seals',
+  description: 'Explore our range of premium industrial gaskets including asbestos, rubber, graphite, and specialized sealing solutions.',
+  alternates: {
+    canonical: 'https://www.hydel.co.in/products',
+  },
+  openGraph: {
+    title: 'Industrial Gaskets & Seals | Hydel Marketing & Services',
+    description: 'Premium quality sealing solutions for industrial applications',
+    url: 'https://www.hydel.co.in/products',
+    images: [
+      {
+        url: 'https://www.hydel.co.in/hydel.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  keywords: [
+    'industrial gaskets', 'graphite gaskets', 'rubber seals',
+    'asbestos-free gaskets', 'high temperature gaskets',
+    'oil seal rings', 'spiral wound gaskets'
+  ],
+};
+
+export default async function ProductsPage() {
+  const products = await listPublicProducts();
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": products.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": product.name,
+        "description": product.description,
+        "image": product.image,
+        "offers": {
+          "@type": "Offer",
+          "price": product.price,
+          "priceCurrency": "USD"
+        }
+      }
+    }))
+  };
+
+  return (
+    <>
+      <Script
+        type="application/ld+json"
+        id="structured-data"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <Navbar />
+      <main className={styles.productsContainer}>
+        <h1>Industrial Sealing Solutions</h1>
+        <p className={styles.pageSubtitle}>High-performance gaskets and seals for demanding applications</p>
+
+        <div className={styles.productsGrid} role="list" aria-label="Product listings">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </main>
+      <SimilarProductButton />
+    </>
+  );
+}

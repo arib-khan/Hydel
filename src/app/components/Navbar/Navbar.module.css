@@ -1,0 +1,126 @@
+.header {
+    background-color:#1e8e42; /* 037323  , #0f7450 ,#1e8e42 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    margin: 0;
+    padding: 0;
+    height: 70px; /* Add fixed height */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    /* Remove position: relative if it's causing issues */
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 10));
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 12));
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.navLinks a:hover {
+    color: #e0e0e0;
+}
+
+.navLinks a.active {
+    color: white;
+    font-weight: 600;
+}
+
+.navLinks a.active::after,
+.navLinks a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.hamburger {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    
+.logo img {
+    height: 40px;
+    /* width: auto; */
+}
+    
+    .navLinks {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 99;
+    }
+
+    .navLinks.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 100;
+    }
+}

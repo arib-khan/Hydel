@@ -1,0 +1,36 @@
+# robots.txt for Hydel Marketing & Services
+# This file tells search engines which pages to crawl
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.hydel.co.in/sitemap.xml
+
+# Disallow admin/private areas (if any)
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Prevent scraping of images by bad bots (optional)
+User-agent: *
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
