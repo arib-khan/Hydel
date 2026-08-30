@@ -72,10 +72,10 @@ export default async function Home() {
     "logo": "https://www.hydel.co.in/hydel.png",
     "foundingDate": "2008",
     "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-9827059392",
-    "contactType": "Customer Service"
-  }
+      "@type": "ContactPoint",
+      "telephone": "+91-9827059392",
+      "contactType": "Customer Service"
+    }
   };
 
   return (
@@ -84,21 +84,46 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
+
       <main>
         {/* Add semantic sectioning */}
         <section aria-label="Featured products showcase">
+          {/* The homepage previously had no <h1> at all - the carousel is
+              pure image/video with no text - which is a basic on-page SEO
+              gap (search engines use the h1 as a strong signal for what the
+              page is about, and this is the page most likely to rank for
+              the brand + core category query).
+              Note: this project's Tailwind directives are commented out in
+              globals.css (only /admin is actually built with Tailwind), so
+              a "sr-only" class would render as plain visible text here -
+              using the standard visually-hidden inline style instead so it
+              helps SEO/screen readers without changing how the hero looks. */}
+          <h1
+            style={{
+              position: 'absolute',
+              width: '1px',
+              height: '1px',
+              padding: 0,
+              margin: '-1px',
+              overflow: 'hidden',
+              clip: 'rect(0, 0, 0, 0)',
+              whiteSpace: 'nowrap',
+              border: 0,
+            }}
+          >
+            Hydel Marketing &amp; Services – Industrial Gaskets &amp; Sealing Solutions Manufacturer in India
+          </h1>
           <Carousel slides={slides} />
         </section>
-        
+
         <section aria-label="Our trusted clients">
           <ClientsSection />
         </section>
-        
+
         <section aria-label="Our product range">
           <ProductsSection />
         </section>
-        
+
         <WhatsAppButton />
       </main>
     </>

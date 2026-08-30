@@ -30,14 +30,22 @@ const structuredData = {
   "@type": "LocalBusiness",
   "name": "Hydel Marketing & Services",
   "description": "Provider of premium industrial gaskets and sealing solutions",
-  "image": "https://www.hydel.co.in/Hydel_Logo.png",
+  "image": "https://www.hydel.co.in/hydel.png",
   "url": "https://www.hydel.co.in",
-  "telephone": "+91-1234567890",
+  // Previously a placeholder number ("+91-1234567890") that didn't match the
+  // real number shown everywhere else on the site (footer, other schema
+  // blocks). Mismatched phone numbers in structured data vs. on-page content
+  // is exactly the kind of NAP (Name/Address/Phone) inconsistency that hurts
+  // local search relevance.
+  "email": "hydel92@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "DRP",
+    // The previous version had streetAddress: "DRP" (a meaningless
+    // placeholder) and postalCode: "400001", which is a Mumbai PIN code, not
+    // an Indore one - factually wrong address data is worse than an
+    // incomplete one for local SEO. Left both out rather than guessing;
+    // fill in the real street address and PIN code once available.
     "addressLocality": "Indore",
-    "postalCode": "400001",
     "addressRegion": "Madhya Pradesh",
     "addressCountry": "IN"
   },

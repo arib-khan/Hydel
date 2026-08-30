@@ -4,13 +4,18 @@ import Link from 'next/link';
 import { FaFacebook, FaLinkedin, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
-const Footer = () => {
+export interface FooterProductLink {
+  slug: string;
+  name: string;
+}
+
+const Footer = ({ products = [] }: { products?: FooterProductLink[] }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         {/* Main Footer Content */}
         <div className={styles.grid}>
-          
+
           {/* Company Logo and Description */}
           <div className={styles.logoSection}>
             <div className={styles.logoContainer}>
@@ -23,7 +28,7 @@ const Footer = () => {
               />
             </div>
             <p className={styles.description}>
-              Providing high-quality industrial sealing solutions since 2008. 
+              Providing high-quality industrial sealing solutions since 2008.
               We manufacture premium gaskets and seals for demanding applications worldwide.
             </p>
             <div className={styles.socialIcons}>
@@ -52,14 +57,28 @@ const Footer = () => {
           </div>
 
           {/* Products */}
+          {/* Pulled from the live catalog (see PublicChrome/layout) instead of
+              a hardcoded list, so every product - not just a handful of
+              hand-picked names - gets a sitewide internal link. A page with
+              no link from this footer sits one crawl-hop deeper on every
+              single page of the site and gets far fewer internal links
+              overall, which was quietly starving products like the asbestos
+              gasket page of the link equity search engines use to crawl and
+              rank it. */}
           <div className={styles.linksSection}>
             <h3 className={styles.sectionTitle}>Our Products</h3>
             <ul className={styles.linksList}>
-              <li><Link href="/products/graphite-gasket" className={styles.link}>Graphite Gaskets</Link></li>
-              <li><Link href="/products/non-asbestos-gasket" className={styles.link}>Non-Asbestos Gaskets</Link></li>
-              <li><Link href="/products/rubber-gasket" className={styles.link}>Rubber Gaskets</Link></li>
-              <li><Link href="/products/spiral-wound-gasket" className={styles.link}>Spiral Wound Gaskets</Link></li>
-              <li><Link href="/products/teflon-gasket" className={styles.link}>Teflon Gaskets</Link></li>
+              {products.length > 0 ? (
+                products.map((product) => (
+                  <li key={product.slug}>
+                    <Link href={`/products/${product.slug}`} className={styles.link}>
+                      {product.name}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <li><Link href="/products" className={styles.link}>View All Products</Link></li>
+              )}
             </ul>
           </div>
 

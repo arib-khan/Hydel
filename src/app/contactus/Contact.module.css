@@ -20,7 +20,7 @@
   margin-bottom: 2rem;
 }
 
-.formHeader h2 {
+.formHeader h1 {
   font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
@@ -159,8 +159,8 @@
     padding: 2rem 1.5rem;
     gap: 2rem;
   }
-  
-  .formHeader h2,
+
+  .formHeader h1,
   .infoHeader h2 {
     font-size: 1.75rem;
   }
@@ -170,8 +170,8 @@
   .contactContainer {
     padding: 1.5rem 1rem;
   }
-  
-  .formHeader h2,
+
+  .formHeader h1,
   .infoHeader h2 {
     font-size: 1.5rem;
   }

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Navbar } from '../components';
 import styles from './Contact.module.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
-  
+
 
 export default function ContactPage() {
 
@@ -70,7 +70,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -109,12 +109,12 @@ export default function ContactPage() {
       <div className={styles.contactContainer}>
         <div className={styles.contactForm}>
           <div className={styles.formHeader}>
-            <h2>Get in Touch</h2>
+            <h1>Get in Touch</h1>
             <p className={styles.formSubtitle}>
               Have questions or need assistance? Reach out to us and our team will respond promptly.
             </p>
           </div>
-          
+
           {submitStatus === 'success' && (
             <div className={styles.successMessage}>
               <FaCheckCircle className={styles.statusIcon} />
@@ -131,13 +131,13 @@ export default function ContactPage() {
           <form className={styles.form} onSubmit={handleSubmit} noValidate>
             <div className={styles.formGroup}>
               <label htmlFor="name">Name</label>
-              <input 
-                type="text" 
-                id="name" 
+              <input
+                type="text"
+                id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name" 
+                placeholder="Enter your name"
                 className={`${styles.formInput} ${errors.name ? styles.errorInput : ''}`}
                 required
               />
@@ -146,13 +146,13 @@ export default function ContactPage() {
 
             <div className={styles.formGroup}>
               <label htmlFor="email">Email</label>
-              <input 
-                type="email" 
-                id="email" 
+              <input
+                type="email"
+                id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email" 
+                placeholder="Enter your email"
                 className={`${styles.formInput} ${errors.email ? styles.errorInput : ''}`}
                 required
               />
@@ -161,12 +161,12 @@ export default function ContactPage() {
 
             <div className={styles.formGroup}>
               <label htmlFor="message">Message</label>
-              <textarea 
-                id="message" 
+              <textarea
+                id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="How can we help you?" 
+                placeholder="How can we help you?"
                 rows={5}
                 className={`${styles.formTextarea} ${errors.message ? styles.errorInput : ''}`}
                 required
@@ -174,8 +174,8 @@ export default function ContactPage() {
               {errors.message && <span className={styles.errorText}>{errors.message}</span>}
             </div>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className={styles.submitButton}
               disabled={isSubmitting}
             >
@@ -194,9 +194,9 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.mapWrapper}>
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7360.241097238493!2d75.84932849999998!3d22.723760333333345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1750689645886!5m2!1sen!2sin"  
-              allowFullScreen 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7360.241097238493!2d75.84932849999998!3d22.723760333333345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1750689645886!5m2!1sen!2sin"
+              allowFullScreen
               loading="lazy"
               title="Our Location on Google Maps"
               className={styles.map}

@@ -35,17 +35,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const products = await listPublicProducts();
 
-  const productRoutes: MetadataRoute.Sitemap = products.map((product) => {
-    const isHighDemand = ['graphite gasket', 'rubber gasket', 'non asbestos gasket', 'spiral wound gasket']
-      .some(keyword => product.name.toLowerCase().includes(keyword.toLowerCase()));
-
-    return {
-      url: `${baseUrl}/products/${product.slug}`,
-      lastModified: lastMod,
-      changeFrequency: 'weekly' as const,
-      priority: isHighDemand ? 0.9 : 0.85,
-    };
-  });
+  // Every product gets the same priority. The previous version boosted four
+  // hardcoded product names and quietly deprioritized everything else
+  // (including the asbestos gasket page) - sitemap priority is a weak signal
+  // to begin with, and picking favorites here just adds an arbitrary bias
+  // that isn't backed by real traffic or business data.
+  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${baseUrl}/products/${product.slug}`,
+    lastModified: lastMod,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }));
 
   return [...staticRoutes, ...productRoutes];
 }
