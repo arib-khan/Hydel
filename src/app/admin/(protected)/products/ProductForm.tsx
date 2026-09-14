@@ -22,6 +22,11 @@ type FormValues = {
   compliance: string;
   image: string;
   imagePublicId: string;
+  metaTitle: string;
+  metaDescription: string;
+  seoKeywords: string; // comma-separated in the UI
+  seoContent: string;
+  imageAltText: string;
 };
 
 function toCsv(arr?: string[]) {
@@ -55,6 +60,11 @@ export default function ProductForm({ product }: { product?: Product }) {
     compliance: product?.compliance || '',
     image: product?.image || '',
     imagePublicId: product?.imagePublicId || '',
+    metaTitle: product?.seo?.metaTitle || '',
+    metaDescription: product?.seo?.metaDescription || '',
+    seoKeywords: toCsv(product?.seo?.keywords),
+    seoContent: product?.seo?.seoContent || '',
+    imageAltText: product?.seo?.imageAltText || '',
   });
 
   const [technical, setTechnical] = useState<{ key: string; value: string }[]>(
@@ -142,6 +152,19 @@ export default function ProductForm({ product }: { product?: Product }) {
       standards: fromCsv(values.standards),
       compliance: values.compliance || undefined,
       technical: technicalObj,
+      // Omit the whole seo object when every field is blank, so we don't
+      // write an empty {} onto products that have never had custom SEO set
+      // and are relying entirely on the generated fallbacks.
+      seo:
+        values.metaTitle || values.metaDescription || values.seoKeywords || values.seoContent || values.imageAltText
+          ? {
+            metaTitle: values.metaTitle || undefined,
+            metaDescription: values.metaDescription || undefined,
+            keywords: fromCsv(values.seoKeywords),
+            seoContent: values.seoContent || undefined,
+            imageAltText: values.imageAltText || undefined,
+          }
+          : undefined,
     };
 
     setSaving(true);
@@ -316,6 +339,67 @@ export default function ProductForm({ product }: { product?: Product }) {
             value={values.compliance}
             onChange={(e) => update('compliance', e.target.value)}
             className="admin-input"
+          />
+        </div>
+      </section>
+
+      <section className="admin-card admin-space-y-4">
+        <h2 className="admin-card-title">SEO (optional)</h2>
+        <p className="admin-text-sm admin-text-muted">
+          Leave these blank to use sensible auto-generated values based on the product name,
+          material, and description. Fill them in to override what search engines and social
+          previews show for this specific product.
+        </p>
+
+        <div>
+          <label className="admin-label">Meta Title</label>
+          <input
+            value={values.metaTitle}
+            onChange={(e) => update('metaTitle', e.target.value)}
+            placeholder={`${values.name || 'Product Name'} - ${values.material || 'Material'} | Hydel India`}
+            className="admin-input"
+          />
+        </div>
+
+        <div>
+          <label className="admin-label">Meta Description</label>
+          <textarea
+            rows={2}
+            value={values.metaDescription}
+            onChange={(e) => update('metaDescription', e.target.value)}
+            placeholder="A concise, unique summary of this product (~155 characters works best in search results)."
+            className="admin-textarea"
+          />
+        </div>
+
+        <div>
+          <label className="admin-label">SEO Keywords (comma-separated)</label>
+          <input
+            value={values.seoKeywords}
+            onChange={(e) => update('seoKeywords', e.target.value)}
+            placeholder="e.g. graphite gasket, high temperature gasket, gasket supplier India"
+            className="admin-input"
+          />
+        </div>
+
+        <div>
+          <label className="admin-label">Image Alt Text</label>
+          <input
+            value={values.imageAltText}
+            onChange={(e) => update('imageAltText', e.target.value)}
+            placeholder={`e.g. ${values.name || 'Product name'} manufactured by Hydel Marketing & Services`}
+            className="admin-input"
+          />
+        </div>
+
+        <div>
+          <label className="admin-label">Additional SEO Content</label>
+          <textarea
+            rows={4}
+            value={values.seoContent}
+            onChange={(e) => update('seoContent', e.target.value)}
+            placeholder="Optional longer-form content shown in an 'Additional Information' section on the product page - buying guide notes, usage tips, etc. Avoid repeating the description word-for-word."
+            className="admin-textarea"
           />
         </div>
       </section>

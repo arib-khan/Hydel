@@ -13,6 +13,15 @@ export interface ProductSEO {
   metaTitle?: string;
   metaDescription?: string;
   keywords?: string[];
+  // Optional longer-form SEO copy rendered as an extra section on the
+  // product page (e.g. buying guide, usage notes). Purely additive - most
+  // products can leave this empty and rely on the description/features
+  // already on the page.
+  seoContent?: string;
+  // Descriptive alt text for the product's primary/gallery image. Falls
+  // back to a generated "<name> - <material> manufactured by ..." string
+  // when empty, so older records keep working unchanged.
+  imageAltText?: string;
 }
 
 export interface Product {

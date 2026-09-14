@@ -3,6 +3,8 @@
 
 import styles from './ProductDetail.module.css';
 import Link from 'next/link';
+import { getProductImageAlt } from '@/lib/seo/productSeo';
+import type { ProductSEO } from '@/types/product';
 
 interface Product {
   id: string;
@@ -15,6 +17,7 @@ interface Product {
   colors?: string[];
   sizes?: string[];
   slug: string;
+  seo?: ProductSEO;
 }
 
 export default function RelatedProducts({ products }: { products: Product[] }) {
@@ -25,15 +28,15 @@ export default function RelatedProducts({ products }: { products: Product[] }) {
         {products.map((product) => {
           const slug = product.slug;
           return (
-            <Link 
-              href={`/products/${slug}`} 
+            <Link
+              href={`/products/${slug}`}
               key={product.id}
               className={styles.relatedCard}
             >
               <div className={styles.relatedImageContainer}>
-                <img 
-                  src={product.image} 
-                  alt={product.name}
+                <img
+                  src={product.image}
+                  alt={getProductImageAlt(product)}
                   loading="lazy"
                 />
                 {product.customizable && (
@@ -46,7 +49,7 @@ export default function RelatedProducts({ products }: { products: Product[] }) {
                 <span className={styles.viewDetails}>
                   View Details
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </div>

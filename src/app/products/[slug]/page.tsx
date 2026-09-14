@@ -7,6 +7,12 @@ import RelatedProducts from './RelatedProducts';
 import ProductGallery from './ProductGallery';
 import QuoteButton from './QuoteButton';
 import { getPublicProductBySlug, listPublicProducts } from '@/lib/repositories/productRepository';
+import {
+  getProductImageAlt,
+  getProductMetaTitle,
+  getProductMetaDescription,
+  getProductKeywords,
+} from '@/lib/seo/productSeo';
 
 // Products now live in Firestore; re-check periodically instead of only at build time.
 export const revalidate = 60;
@@ -41,37 +47,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  // Enhanced title with location and year
-  const title = `${product.name} - ${product.material} | Hydel India`;
-
-  // Keep descriptions within ~155 characters so Google doesn't truncate them
-  // mid-sentence in search results (the previous version was a fixed 209
-  // characters on every product page).
-  const CTA = ' ISO Certified. Request a quote today!';
-  const baseText = product.fullDescription || product.description || `Premium ${product.name} made from ${product.material}.`;
-  const maxBaseLength = 155 - CTA.length;
-  const trimmedBase = baseText.length > maxBaseLength
-    ? `${baseText.slice(0, maxBaseLength - 1).trimEnd()}…`
-    : baseText;
-  const description = `${trimmedBase}${CTA}`;
-
-  // Comprehensive keywords including long-tail
-  const keywords = [
-    product.name,
-    `${product.name} price`,
-    `buy ${product.name}`,
-    `${product.name} supplier`,
-    `${product.name} manufacturer`,
-    product.material,
-    `${product.material} gasket`,
-    'industrial gaskets',
-    'sealing solutions',
-    'gasket supplier India',
-    'industrial seals',
-    ...(product.applications || []),
-    ...(product.sizes || []).map(size => `${product.name} ${size}`),
-    product.temperatureRange ? `${product.temperatureRange} gasket` : '',
-  ].filter(Boolean);
+  // Custom admin-entered SEO fields win when present; otherwise these fall
+  // back to sensible generated values (see src/lib/seo/productSeo.ts) so
+  // every product still gets unique, non-empty metadata out of the box.
+  const title = getProductMetaTitle(product);
+  const description = getProductMetaDescription(product);
+  const keywords = getProductKeywords(product);
+  const imageAlt = getProductImageAlt(product);
 
   return {
     title: title,
@@ -82,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `https://www.hydel.co.in/products/${slug}`,
     },
     openGraph: {
-      title: `${product.name} | Premium ${product.material} Gaskets`,
+      title: title,
       description: description,
       url: `https://www.hydel.co.in/products/${slug}`,
       siteName: 'Hydel Marketing & Services',
@@ -93,7 +75,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           url: absoluteProductImageUrl(product.image),
           width: 1200,
           height: 630,
-          alt: `${product.name} - ${product.material}`,
+          alt: imageAlt,
         },
       ],
     },
@@ -547,6 +529,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     {product.compliance}
                   </p>
                 )}
+              </div>
+            )}
+
+            {/* Optional per-product SEO content, entered by an admin. Purely
+                additive - most products won't have this set and the section
+                simply doesn't render. */}
+            {product.seo?.seoContent && (
+              <div className={styles.fullDescriptionSection}>
+                <h2>Additional Information</h2>
+                <p>{product.seo.seoContent}</p>
               </div>
             )}
 

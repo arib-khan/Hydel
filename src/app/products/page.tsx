@@ -53,7 +53,11 @@ export default async function ProductsPage() {
         "offers": {
           "@type": "Offer",
           "price": product.price,
-          "priceCurrency": "USD"
+          // Matches the currency used everywhere else on the site (the
+          // product detail page's own Product schema, the business itself
+          // being India-based) - USD here was inconsistent and could
+          // confuse rich-result price display.
+          "priceCurrency": "INR"
         }
       }
     }))

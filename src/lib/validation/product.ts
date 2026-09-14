@@ -25,6 +25,8 @@ export const productInputSchema = z.object({
       metaTitle: z.string().optional(),
       metaDescription: z.string().optional(),
       keywords: z.array(z.string()).optional(),
+      seoContent: z.string().optional(),
+      imageAltText: z.string().optional(),
     })
     .optional(),
   legacyId: z.number().optional(),
