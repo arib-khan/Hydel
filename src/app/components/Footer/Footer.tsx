@@ -96,7 +96,7 @@ const Footer = ({ products = [] }: { products?: FooterProductLink[] }) => {
               </li>
               <li className={styles.contactItem}>
                 <FaEnvelope className={styles.contactIcon} />
-                <a href="mailto:hydel92@gmail.com" className={styles.contactLink}>hydel92@gmail.com</a>
+                <a href="mailto:info@hydel.co.in" className={styles.contactLink}>info@hydel.co.in</a>
               </li>
             </ul>
           </div>

@@ -63,7 +63,7 @@ export async function POST(request: Request) {
   
   <ul style="color: #333; line-height: 1.6; padding-left: 20px;">
     <li><strong>Technical Support:</strong> +91-9827059392</li>
-    <li><strong>Sales Enquiries:</strong> hydel92@gmail.com</li>
+    <li><strong>Sales Enquiries:</strong> info@hydel.co.in</li>
   </ul>
   
   <p style="color: #333; line-height: 1.6; margin-top: 20px;">At Hydel, we're committed to providing innovative solutions for your industrial flow control needs.</p>

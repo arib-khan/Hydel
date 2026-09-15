@@ -37,7 +37,7 @@ const structuredData = {
   // blocks). Mismatched phone numbers in structured data vs. on-page content
   // is exactly the kind of NAP (Name/Address/Phone) inconsistency that hurts
   // local search relevance.
-  "email": "hydel92@gmail.com",
+  "email": "info@hydel.co.in",
   "address": {
     "@type": "PostalAddress",
     // The previous version had streetAddress: "DRP" (a meaningless

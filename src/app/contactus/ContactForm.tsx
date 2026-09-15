@@ -225,7 +225,7 @@ export default function ContactPage() {
               <FaEnvelope className={styles.contactIcon} />
               <div>
                 <h3>Email</h3>
-                <p>hydel92@gmail.com</p>
+                <p>info@hydel.co.in</p>
                 <p className={styles.contactNote}>Typically respond within 24 hours</p>
               </div>
             </div>
