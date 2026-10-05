@@ -71,9 +71,6 @@ export async function POST(request: Request) {
   <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
     <p style="color: #005b82; font-weight: bold;">Best regards,</p>
     <p style="color: #333;">The Hydel Team</p>
-    <p style="font-size: 12px; color: #7f8c8d; margin-top: 5px;">
-      Hydel Industries | Specialists in Industrial Valves & Gates
-    </p>
   </div>
   
   <div style="font-size: 10px; color: #95a5a6; margin-top: 20px; text-align: center;">

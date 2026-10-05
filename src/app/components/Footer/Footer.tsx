@@ -90,10 +90,10 @@ const Footer = ({ products = [] }: { products?: FooterProductLink[] }) => {
                 <FaMapMarkerAlt className={styles.contactIcon} />
                 <span className={styles.contactText}>Indore, MP, India</span>
               </li>
-              <li className={styles.contactItem}>
+              {/* <li className={styles.contactItem}>
                 <FaPhone className={styles.contactIcon} />
                 <a href="tel:+919827059392" className={styles.contactLink}>+91-9827059392</a>
-              </li>
+              </li> */}
               <li className={styles.contactItem}>
                 <FaEnvelope className={styles.contactIcon} />
                 <a href="mailto:info@hydel.co.in" className={styles.contactLink}>info@hydel.co.in</a>

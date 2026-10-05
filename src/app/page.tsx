@@ -73,7 +73,6 @@ export default async function Home() {
     "foundingDate": "2008",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9827059392",
       "contactType": "Customer Service"
     }
   };
