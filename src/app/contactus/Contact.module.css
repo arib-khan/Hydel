@@ -228,3 +228,35 @@
   opacity: 0.7;
   cursor: not-allowed;
 }
+/* Privacy consent checkbox: class-based (no inline styles) and explicitly
+   native-looking so no global/reset rule or inline-style restriction can hide it. */
+.formGroup .consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.consentCheckbox {
+  -webkit-appearance: checkbox;
+  appearance: auto;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  position: static;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin: 0.25rem 0 0;
+  accent-color: #16c964;
+  cursor: pointer;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

@@ -193,7 +193,7 @@ export default function ContactPage() {
               tabIndex={-1}
               autoComplete="off"
               aria-hidden="true"
-              style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+              className={styles.honeypot}
             />
 
             <p className={styles.formSubtitle} id="privacy-notice">
@@ -203,7 +203,7 @@ export default function ContactPage() {
             </p>
 
             <div className={styles.formGroup}>
-              <label htmlFor="privacyConsent" style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontWeight: 400 }}>
+              <label htmlFor="privacyConsent" className={styles.consentLabel}>
                 <input
                   type="checkbox"
                   id="privacyConsent"
@@ -216,7 +216,7 @@ export default function ContactPage() {
                   aria-required="true"
                   aria-describedby="privacy-notice"
                   aria-invalid={!!errors.privacy}
-                  style={{ marginTop: '0.3rem', width: '18px', height: '18px', flexShrink: 0 }}
+                  className={styles.consentCheckbox}
                 />
                 <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</Link>. *</span>
               </label>
