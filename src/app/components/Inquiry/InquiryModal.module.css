@@ -134,3 +134,8 @@
   color: #005b82;
   margin-bottom: 8px;
 }
+
+.privacyNotice { font-size: 0.8rem; color: #475569; line-height: 1.5; }
+.privacyNotice a, .checkboxLabel a { color: #1e8e42; text-decoration: underline; }
+.checkboxLabel { display: flex !important; gap: 8px; align-items: flex-start; font-weight: 400 !important; }
+.checkboxLabel input { width: 18px !important; height: 18px; margin-top: 2px; flex-shrink: 0; padding: 0; }

@@ -179,16 +179,28 @@
 
 .legalLinks {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
 }
 
-.legalLink {
-  color: #6b7280;
+.legalLink,
+.legalLinkButton {
+  color: #ffffff;
   font-size: 0.75rem;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
-.legalLink:hover {
-  color: #ffffff;
+.legalLinkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.legalLink:hover,
+.legalLinkButton:hover {
+  text-decoration: underline;
 }

@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 import { Navbar } from '../components';
 import styles from './Contact.module.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
@@ -10,12 +11,15 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    website: '' // honeypot - real users never fill this in
   });
+  const [privacyConsent, setPrivacyConsent] = useState(false); // unchecked by default
   const [errors, setErrors] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    privacy: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
@@ -25,8 +29,14 @@ export default function ContactPage() {
     const newErrors = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      privacy: ''
     };
+
+    if (!privacyConsent) {
+      newErrors.privacy = 'Please agree to the Privacy Policy to send your message';
+      valid = false;
+    }
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
@@ -60,7 +70,7 @@ export default function ContactPage() {
       [name]: value
     }));
     // Clear error when user starts typing
-    if (errors[name as keyof typeof errors]) {
+    if (errors[name as keyof typeof errors] !== undefined && errors[name as keyof typeof errors]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
@@ -84,12 +94,13 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, privacyConsent }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', website: '' });
+        setPrivacyConsent(false);
       } else {
         const errorData = await response.json();
         console.error('Server error:', errorData);
@@ -172,6 +183,44 @@ export default function ContactPage() {
                 required
               ></textarea>
               {errors.message && <span className={styles.errorText}>{errors.message}</span>}
+            </div>
+
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+            />
+
+            <p className={styles.formSubtitle} id="privacy-notice">
+              We collect the information you provide to respond to your enquiry and provide our services.
+              Your name, email address and message are emailed to our team, and an acknowledgement is sent to your email.
+              Please see our <Link href="/privacy-policy">Privacy Policy</Link> for information about how your data is collected, used, and protected.
+            </p>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="privacyConsent" style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontWeight: 400 }}>
+                <input
+                  type="checkbox"
+                  id="privacyConsent"
+                  name="privacyConsent"
+                  checked={privacyConsent}
+                  onChange={(e) => {
+                    setPrivacyConsent(e.target.checked);
+                    if (e.target.checked) setErrors(prev => ({ ...prev, privacy: '' }));
+                  }}
+                  aria-required="true"
+                  aria-describedby="privacy-notice"
+                  aria-invalid={!!errors.privacy}
+                  style={{ marginTop: '0.3rem', width: '18px', height: '18px', flexShrink: 0 }}
+                />
+                <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</Link>. *</span>
+              </label>
+              {errors.privacy && <span className={styles.errorText} role="alert">{errors.privacy}</span>}
             </div>
 
             <button

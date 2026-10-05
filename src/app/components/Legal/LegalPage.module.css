@@ -1,0 +1,19 @@
+.wrap { padding: 3rem 1rem; }
+.article { max-width: 860px; margin: 2rem auto; color: #333; line-height: 1.75; font-size: 1rem; }
+.header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid #1e8e42; }
+.header h1 { font-size: 2.25rem; color: #1a1a1a; margin-bottom: 0.4rem; }
+.updated { color: #666; font-size: 0.9rem; }
+.intro { margin-top: 1rem; }
+.article h2 { font-size: 1.4rem; color: #1e8e42; margin: 2rem 0 0.6rem; }
+.article h3 { font-size: 1.1rem; color: #1a1a1a; margin: 1.2rem 0 0.4rem; }
+.article p { margin-bottom: 0.9rem; }
+.article ul { margin: 0 0 1rem 1.5rem; }
+.article li { margin-bottom: 0.4rem; }
+.article a { color: #1e8e42; text-decoration: underline; word-break: break-word; }
+.tableWrap { overflow-x: auto; margin-bottom: 1rem; }
+.article table { border-collapse: collapse; width: 100%; font-size: 0.9rem; min-width: 560px; }
+.article th, .article td { border: 1px solid #d1d5db; padding: 0.6rem; text-align: left; vertical-align: top; }
+.article th { background: #f0f9f3; }
+.note { background: #f0f9f3; border-left: 4px solid #1e8e42; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 4px; }
+@media (max-width: 600px) { .header h1 { font-size: 1.75rem; } .wrap { padding: 1.5rem 1rem; } }
+.inlineButton { background: none; border: none; padding: 0; color: #1e8e42; text-decoration: underline; cursor: pointer; font: inherit; }

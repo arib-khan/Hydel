@@ -31,6 +31,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...['privacy-policy', 'cookie-policy', 'terms-and-conditions', 'disclaimer'].map((p) => ({
+      url: `${baseUrl}/${p}`,
+      lastModified: lastMod,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    })),
   ];
 
   const products = await listPublicProducts();

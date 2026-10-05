@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaLinkedin, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import styles from './Footer.module.css';
+import CookieSettingsButton from '../Consent/CookieSettingsButton';
 
 export interface FooterProductLink {
   slug: string;
@@ -52,7 +53,8 @@ const Footer = ({ products = [] }: { products?: FooterProductLink[] }) => {
               <li><Link href="/products" className={styles.link}>Products</Link></li>
               <li><Link href="/aboutus" className={styles.link}>About Us</Link></li>
               <li><Link href="/contactus" className={styles.link}>Contact</Link></li>
-              {/* <li><Link href="/blog" className={styles.link}>Blog</Link></li> */}
+              <li><Link href="/privacy-policy" className={styles.link}>Privacy Policy</Link></li>
+              <li><Link href="/cookie-policy" className={styles.link}>Cookie Policy</Link></li>
             </ul>
           </div>
 
@@ -107,11 +109,13 @@ const Footer = ({ products = [] }: { products?: FooterProductLink[] }) => {
           <p className={styles.copyrightText}>
             &copy; {new Date().getFullYear()} Hydel Marketing & Services. All rights reserved.
           </p>
-          {/* <div className={styles.legalLinks}>
-            <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
-            <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
-            <Link href="/sitemap" className={styles.legalLink}>Sitemap</Link>
-          </div> */}
+          <nav className={styles.legalLinks} aria-label="Legal">
+            <Link href="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
+            <Link href="/cookie-policy" className={styles.legalLink}>Cookie Policy</Link>
+            <Link href="/terms-and-conditions" className={styles.legalLink}>Terms &amp; Conditions</Link>
+            <Link href="/disclaimer" className={styles.legalLink}>Disclaimer</Link>
+            <CookieSettingsButton className={styles.legalLinkButton} />
+          </nav>
         </div>
       </div>
     </footer>

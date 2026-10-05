@@ -33,6 +33,11 @@ export interface Inquiry {
   createdAt: number;
   updatedAt: number;
 
+  // Privacy-policy consent record (added with the legal/consent update).
+  // Older inquiries created before this change will not have these fields.
+  privacyConsentAt?: number;
+  privacyPolicyVersion?: string;
+
   // Basic abuse-mitigation metadata
   ip?: string;
   userAgent?: string;

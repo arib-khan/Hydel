@@ -6,6 +6,7 @@
 import 'server-only';
 import nodemailer from 'nodemailer';
 import type { Inquiry } from '@/types/inquiry';
+import { escapeHtml as esc } from '@/lib/escapeHtml';
 
 function getTransporter() {
   const user = process.env.GMAIL_USER;
@@ -36,19 +37,19 @@ export async function sendInquiryNotificationEmail(inquiry: Inquiry) {
   await transporter.sendMail({
     from: `"Hydel Website" <${process.env.GMAIL_USER}>`,
     to: notifyTo,
-    subject: `New Product Inquiry — ${inquiry.productName}`,
+    subject: `New Product Inquiry — ${String(inquiry.productName).replace(/[\r\n]+/g, ' ').slice(0, 150)}`,
     html: `
       <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 8px; max-width: 600px;">
         <h2 style="color: #2c3e50;">📩 New Product Inquiry</h2>
         <table style="width: 100%; border-collapse: collapse;">
-          <tr><td style="padding: 8px; font-weight: bold; width: 160px;">Product:</td><td style="padding: 8px; background:#fff;">${inquiry.productName}</td></tr>
-          <tr><td style="padding: 8px; font-weight: bold;">Customer:</td><td style="padding: 8px; background:#fff;">${inquiry.customerName}</td></tr>
-          <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px; background:#fff;">${inquiry.email}</td></tr>
-          <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px; background:#fff;">${inquiry.phone}</td></tr>
-          ${inquiry.company ? `<tr><td style="padding: 8px; font-weight: bold;">Company:</td><td style="padding: 8px; background:#fff;">${inquiry.company}</td></tr>` : ''}
-          ${inquiry.quantity ? `<tr><td style="padding: 8px; font-weight: bold;">Quantity:</td><td style="padding: 8px; background:#fff;">${inquiry.quantity}</td></tr>` : ''}
-          <tr><td style="padding: 8px; font-weight: bold; vertical-align: top;">Message:</td><td style="padding: 8px; background:#fff;">${inquiry.message}</td></tr>
-          ${inquiry.additionalRequirements ? `<tr><td style="padding: 8px; font-weight: bold; vertical-align: top;">Additional Requirements:</td><td style="padding: 8px; background:#fff;">${inquiry.additionalRequirements}</td></tr>` : ''}
+          <tr><td style="padding: 8px; font-weight: bold; width: 160px;">Product:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.productName)}</td></tr>
+          <tr><td style="padding: 8px; font-weight: bold;">Customer:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.customerName)}</td></tr>
+          <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.email)}</td></tr>
+          <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.phone)}</td></tr>
+          ${inquiry.company ? `<tr><td style="padding: 8px; font-weight: bold;">Company:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.company)}</td></tr>` : ''}
+          ${inquiry.quantity ? `<tr><td style="padding: 8px; font-weight: bold;">Quantity:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.quantity)}</td></tr>` : ''}
+          <tr><td style="padding: 8px; font-weight: bold; vertical-align: top;">Message:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.message)}</td></tr>
+          ${inquiry.additionalRequirements ? `<tr><td style="padding: 8px; font-weight: bold; vertical-align: top;">Additional Requirements:</td><td style="padding: 8px; background:#fff;">${esc(inquiry.additionalRequirements)}</td></tr>` : ''}
         </table>
         <p style="margin-top: 20px;">
           <a href="${dashboardLink}" style="background:#005b82;color:#fff;padding:10px 16px;border-radius:4px;text-decoration:none;">Open in Admin Dashboard</a>

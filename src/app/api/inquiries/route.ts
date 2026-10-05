@@ -9,6 +9,7 @@ import { inquiryInputSchema } from '@/lib/validation/inquiry';
 import { createInquiry, markInquiryEmailResult } from '@/lib/repositories/inquiryRepository';
 import { sendInquiryNotificationEmail } from '@/lib/email';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { PRIVACY_POLICY_VERSION } from '@/lib/legal/config';
 
 function getClientIp(request: NextRequest): string {
   const forwarded = request.headers.get('x-forwarded-for');
@@ -42,13 +43,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true, inquiryId: 'ok' });
     }
 
-    const { website: _honeypot, ...inquiryInput } = parsed.data;
+    const { website: _honeypot, privacyConsent: _consent, ...inquiryInput } = parsed.data;
     void _honeypot;
+    void _consent;
 
     // 1. Save to Firestore - this is the durable source of truth.
     const inquiry = await createInquiry(inquiryInput, {
       ip,
-      userAgent: request.headers.get('user-agent') || undefined,
+      userAgent: (request.headers.get('user-agent') || '').slice(0, 300) || undefined,
+      privacyConsentAt: Date.now(),
+      privacyPolicyVersion: PRIVACY_POLICY_VERSION,
     });
 
     // 2. Best-effort email notification. Never let this fail the request.

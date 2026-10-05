@@ -7,7 +7,7 @@ const COLLECTION = 'inquiries';
 
 export async function createInquiry(
   input: InquiryInput,
-  meta: { ip?: string; userAgent?: string }
+  meta: { ip?: string; userAgent?: string; privacyConsentAt?: number; privacyPolicyVersion?: string }
 ): Promise<Inquiry> {
   const db = getAdminDb();
   const ref = db.collection(COLLECTION).doc();
@@ -24,6 +24,8 @@ export async function createInquiry(
     updatedAt: now,
     ip: meta.ip,
     userAgent: meta.userAgent,
+    privacyConsentAt: meta.privacyConsentAt,
+    privacyPolicyVersion: meta.privacyPolicyVersion,
   };
 
   await ref.set(inquiry);

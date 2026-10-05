@@ -4,6 +4,9 @@
 import { usePathname } from 'next/navigation';
 import { Navbar } from './index';
 import Footer, { FooterProductLink } from './Footer/Footer';
+import CookieBanner from './Consent/CookieBanner';
+import GoogleAnalytics from './GoogleAnalytics';
+import { ANALYTICS_ENABLED } from '@/lib/legal/config';
 
 /**
  * Keeps the public site's Navbar/Footer exactly as they were, while
@@ -34,6 +37,9 @@ export default function PublicChrome({
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer products={footerProducts} />
+      {/* Consent UI + analytics loader exist only when a GA Measurement ID is configured. */}
+      {ANALYTICS_ENABLED && <GoogleAnalytics />}
+      <CookieBanner />
     </>
   );
 }

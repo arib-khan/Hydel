@@ -8,10 +8,10 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.hydel.co.in/sitemap.xml
 
-# Disallow admin/private areas (if any)
-# User-agent: *
-# Disallow: /admin/
-# Disallow: /private/
+# Disallow admin area
+User-agent: *
+Disallow: /admin/
+
 
 # Specific rules for major search engines
 User-agent: Googlebot

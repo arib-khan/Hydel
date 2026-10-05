@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import Link from 'next/link';
 import styles from './InquiryModal.module.css';
 
 interface InquiryModalProps {
@@ -41,6 +42,8 @@ export default function InquiryModal({ productId, productName, productSlug, open
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [privacyConsent, setPrivacyConsent] = useState(false); // unchecked by default
+  const [consentError, setConsentError] = useState<string | null>(null);
 
   useEffect(() => {
     if (open) {
@@ -66,7 +69,12 @@ export default function InquiryModal({ productId, productName, productSlug, open
     if (form.phone.trim().length < 7) next.phone = 'Please enter a valid phone number';
     if (form.message.trim().length < 5) next.message = 'Please add a short message';
     setErrors(next);
-    return Object.keys(next).length === 0;
+    if (!privacyConsent) {
+      setConsentError('Please agree to the Privacy Policy to send your inquiry');
+    } else {
+      setConsentError(null);
+    }
+    return Object.keys(next).length === 0 && privacyConsent;
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -84,6 +92,7 @@ export default function InquiryModal({ productId, productName, productSlug, open
           productName,
           productSlug,
           ...form,
+          privacyConsent,
         }),
       });
 
@@ -104,6 +113,8 @@ export default function InquiryModal({ productId, productName, productSlug, open
     setErrors({});
     setSubmitError(null);
     setSuccess(false);
+    setPrivacyConsent(false);
+    setConsentError(null);
     onClose();
   }
 
@@ -207,6 +218,30 @@ export default function InquiryModal({ productId, productName, productSlug, open
                   value={form.additionalRequirements}
                   onChange={(e) => update('additionalRequirements', e.target.value)}
                 />
+              </div>
+
+              <p className={styles.privacyNotice} id="inquiry-privacy-notice">
+                We collect the information you provide to respond to your enquiry and provide our services.
+                Please see our <Link href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</Link> for information about how your data is collected, used, and protected.
+              </p>
+
+              <div className={styles.field}>
+                <label htmlFor="inquiryPrivacyConsent" className={styles.checkboxLabel}>
+                  <input
+                    id="inquiryPrivacyConsent"
+                    type="checkbox"
+                    checked={privacyConsent}
+                    onChange={(e) => {
+                      setPrivacyConsent(e.target.checked);
+                      if (e.target.checked) setConsentError(null);
+                    }}
+                    aria-required="true"
+                    aria-invalid={!!consentError}
+                    aria-describedby="inquiry-privacy-notice"
+                  />
+                  <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</Link>. *</span>
+                </label>
+                {consentError && <p className={styles.error} role="alert">{consentError}</p>}
               </div>
 
               {submitError && <p className={styles.statusError}>{submitError}</p>}
