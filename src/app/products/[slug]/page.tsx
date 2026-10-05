@@ -254,7 +254,6 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     "logo": "https://www.hydel.co.in/hydel.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9827059392",
       "contactType": "Customer Service",
       "areaServed": "IN",
       "availableLanguage": ["English", "Hindi"]

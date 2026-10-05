@@ -212,14 +212,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className={styles.contactItem}>
+            {/* <div className={styles.contactItem}>
               <FaPhoneAlt className={styles.contactIcon} />
               <div>
                 <h3>Phone</h3>
                 <p>+91-9827059392</p>
                 <p className={styles.contactNote}>Available 9AM-6PM, Monday to Saturday</p>
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.contactItem}>
               <FaEnvelope className={styles.contactIcon} />
